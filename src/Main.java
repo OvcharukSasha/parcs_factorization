@@ -32,10 +32,10 @@ public class Main implements AM {
             for (BigInteger num : res.getList()) {
                 System.out.print(num + " ");
             }
-
-            System.out.println(format("Executed time:"));
+            System.out.println(" ");
             long executedTime = TimeUnit.SECONDS.convert(time2-time1, TimeUnit.NANOSECONDS);
-            System.out.println(executedTime);
+            System.out.println(("Executed time: " + executedTime+" sec."));
+
         } catch (Exception e) {
             e.printStackTrace();
             return;

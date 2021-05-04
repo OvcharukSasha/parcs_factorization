@@ -33,8 +33,9 @@ public class Main implements AM {
                 System.out.print(num + " ");
             }
 
-            System.out.println(format("Executed time: %d seconds", TimeUnit.SECONDS.convert(time2-time1, TimeUnit.NANOSECONDS)));
-            System.out.println(" ");
+            System.out.println(format("Executed time:"));
+            long executedTime = TimeUnit.SECONDS.convert(time2-time1, TimeUnit.NANOSECONDS);
+            System.out.println(executedTime);
         } catch (Exception e) {
             e.printStackTrace();
             return;

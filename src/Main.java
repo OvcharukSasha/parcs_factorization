@@ -20,7 +20,6 @@ public class Main implements AM {
         Scanner sc = new Scanner(System.in);
         BigInteger n = sc.nextBigInteger();
         System.out.println("N is: " + n);
-        long time1=System.nanoTime();
         try {
             point p = amInfo.createPoint();
             channel c = p.createChannel();
@@ -28,13 +27,11 @@ public class Main implements AM {
             c.write(n.toString());
             System.out.println("Waiting for result......");
             Result res = (Result) (c.readObject());
-            long time2=System.nanoTime();
             for (BigInteger num : res.getList()) {
                 System.out.print(num + " ");
             }
             System.out.println(" ");
-            long executedTime = TimeUnit.SECONDS.convert(time2-time1, TimeUnit.NANOSECONDS);
-            System.out.println(("Executed time: " + executedTime+" sec."));
+
 
         } catch (Exception e) {
             e.printStackTrace();

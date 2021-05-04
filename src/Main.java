@@ -2,6 +2,7 @@ import parcs.*;
 
 import java.math.BigInteger;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 import static java.lang.String.format;
 
@@ -31,7 +32,8 @@ public class Main implements AM {
             for (BigInteger num : res.getList()) {
                 System.out.print(num + " ");
             }
-            System.out.println(format("Executed time: %d", time2-time1));
+
+            System.out.println(format("Executed time: %d seconds", TimeUnit.SECONDS.convert(time2-time1, TimeUnit.NANOSECONDS)));
             System.out.println(" ");
         } catch (Exception e) {
             e.printStackTrace();
